@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "JJOG1H9cmd8=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\auror\\Source\\Repos\\ForeverCosmetx\\ForeverCosmetx.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\auror\\.nuget\\packages\\bepinex.assemblypublicizer.msbuild\\0.4.3\\bepinex.assemblypublicizer.msbuild.0.4.3.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -28,15 +28,14 @@ namespace ForeverCosmetx
 
         public void UnlockCosmetics()
         {
-            MethodInfo UnlockItem = typeof(CosmeticsController).GetMethod("UnlockItem", BindingFlags.Instance | BindingFlags.NonPublic);
-
+            var cosmeticsconcat = String.Concat(VRRig.LocalRig._playerOwnedCosmetics);
             foreach (CosmeticsController.CosmeticItem cosmeticItem in CosmeticsController.instance.allCosmetics)
             {
-                if (!CosmeticsController.instance.concatStringCosmeticsAllowed.Contains(cosmeticItem.itemName))
+                if (!cosmeticsconcat.Contains(cosmeticItem.itemName))
                 {
                     try
                     {
-                        UnlockItem.Invoke(CosmeticsController.instance, new object[] { cosmeticItem.itemName, false });
+                        CosmeticsController.instance.UnlockItem(cosmeticItem.itemName, false);
                     } catch { }
                 }
             }

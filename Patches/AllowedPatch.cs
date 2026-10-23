@@ -7,11 +7,13 @@ using UnityEngine;
 
 namespace ForeverCosmetx.Patches
 {
-    [HarmonyPatch(typeof(VRRig))]
-    [HarmonyPatch("IsItemAllowed", MethodType.Normal)]
-    internal class SlidePatch
+    [HarmonyPatch(typeof(VRRig), "IsItemAllowed")]
+    internal class AllowedPatch
     {
-        private static void Postfix(VRRig __instance, ref bool __result) =>
+        private static bool Prefix(ref bool __result)
+        {
             __result = true;
+            return false; // skip the original method
+        }
     }
 }
